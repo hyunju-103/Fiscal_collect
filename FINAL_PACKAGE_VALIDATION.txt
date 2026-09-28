@@ -1,0 +1,33 @@
+FINAL SELF-CONTAINED V6 — VALIDATION REPORT
+Date: 2026-09-23
+
+Active institutions: OECD, ADB, AFDB, ECLAC, EUROSTAT, IDB
+AMF: EXCLUDED
+
+Bundled frozen LOCKED registries validated before network calls:
+- OECD: 23 exact Fiscal Survey codes
+- ADB: 22 exact Fiscal Survey codes
+- AFDB: 9 exact Fiscal Survey codes (approved pre-reconcile registry)
+- ECLAC: 28 exact Fiscal Survey codes
+- EUROSTAT: 15 exact Fiscal Survey codes (pre-reconcile reviewed registry)
+- IDB: 9 Fiscal Survey codes
+
+Execution policy:
+- Bundled LOCKED CSVs are immutable source of truth.
+- No sibling-package registry search in the main execution path.
+- No automatic Mapping -> LOCKED reconciliation in the main execution path.
+- No AMF execution.
+- Only production files already present inside the CURRENT package/year are auto-skipped.
+- --force re-downloads selected sources.
+- Full run automatically executes 04_merge_final_fiscal_data.py --require-all.
+
+Synthetic end-to-end test: PASS
+- All six bundled registries validated.
+- Existing current-package production files were skipped.
+- Six institution production CSVs were read by the merger.
+- Final merge created long, safe-resolved, conflict, by-source wide, safe-wide, coverage summary, and coverage matrix files.
+
+Python compile test: PASS for all packaged .py files.
+Canonical IDB SHA256: 7ce106cf8099d1257126c135e89ecc45c1d65c91b82de74a0810438673e2d906
+Packaged  IDB SHA256: 7ce106cf8099d1257126c135e89ecc45c1d65c91b82de74a0810438673e2d906
+IDB byte-for-byte unchanged: PASS

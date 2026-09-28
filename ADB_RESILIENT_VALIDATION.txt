@@ -1,0 +1,11 @@
+ADB resilient patch validation
+Date: 2026-09-23
+
+PASS - Existing LOCKED ADB mapping unchanged.
+PASS - Normal all-economy request remains the first path.
+PASS - Retryable HTTP statuses 429/502/503/504 trigger economy-chunk fallback.
+PASS - Fallback uses the 50 ADB member economy codes in chunks of 10.
+PASS - Mocked all-economy HTTP 503 produced 5 successful economy chunks and 50 economies.
+PASS - If an open-ended economy chunk also gets a retryable HTTP status, that chunk retries with explicit endPeriod=2024, matching the current ADB API documentation.
+PASS - All package Python files compile.
+NOTE - Live KIDB endpoint could not be executed from this container because outbound DNS is unavailable; live behavior should be verified on the user's network.
